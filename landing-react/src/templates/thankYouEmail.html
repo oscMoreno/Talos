@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu Reseña! - Talos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: white;
+            margin: 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #9747FF;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        .content {
+            margin: 30px 0;
+        }
+        .greeting {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0D0D12;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .message {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 25px;
+        }
+        .review-box {
+            background-color: #f0f9ff;
+            border: 2px solid #9747FF;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .review-text {
+            font-style: italic;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 24px;
+            text-align: center;
+        }
+        .rating-text {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .benefits {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .benefits h3 {
+            color: #0D0D12;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits li {
+            padding: 5px 0;
+            color: #374151;
+        }
+        .benefits li:before {
+            content: "✓";
+            color: #9747FF;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #9747FF;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 25px 0;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #8B3DFF;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #9747FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Talos</div>
+            <div class="subtitle">Servicios de Creación de Logos</div>
+        </div>
+
+        <div class="content">
+            <div class="greeting">¡Muchas Gracias, {{clientName}}! 🎉</div>
+
+            <div class="message">
+                Hemos recibido tu reseña y la valoramos enormemente. Tu opinión nos ayuda a mejorar y servir mejor a nuestros clientes.
+            </div>
+
+            <div class="review-box">
+                <div class="review-text">"{{reviewText}}"</div>
+                <div class="stars">
+                    {{stars}}
+                </div>
+                <div class="rating-text">
+                    Calificación: {{rating}}/5 estrellas
+                </div>
+            </div>
+
+            <div class="benefits">
+                <h3>¿Sabías que tu reseña nos ayuda de estas formas?</h3>
+                <ul>
+                    <li>Atraer nuevos clientes que buscan servicios de calidad</li>
+                    <li>Mejorar nuestros procesos basados en tu feedback</li>
+                    <li>Construir confianza en la comunidad</li>
+                    <li>Motivar a nuestro equipo a seguir excelendo</li>
+                </ul>
+            </div>
+
+            <div class="message">
+                <strong>Como agradecimiento por tu reseña, te ofrecemos:</strong>
+            </div>
+
+            <div class="benefits">
+                <ul>
+                    <li>Descuento del 10% en tu próximo proyecto</li>
+                    <li>Consultoría gratuita de 30 minutos</li>
+                    <li>Acceso prioritario a nuevos lanzamientos</li>
+                    <li>Invitación a nuestro grupo VIP de clientes</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/1234567890?text=Hola,%20recibí%20mi%20descuento%20por%20la%20reseña" class="cta-button">
+                    Reclamar mi Descuento 💰
+                </a>
+            </div>
+
+            <div class="message">
+                <em>¡Gracias nuevamente por ser parte de la comunidad Talos! Esperamos seguir trabajando juntos en futuros proyectos.</em>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://facebook.com/taloslogos">Facebook</a> |
+                <a href="https://youtube.com/taloslogos">YouTube</a> |
+                <a href="https://talos-logos.com">Sitio Web</a>
+            </div>
+
+            <p>
+                Este email fue enviado como agradecimiento por tu reseña.<br>
+                ¿Quieres dejar otra reseña? <a href="https://talos-logos.com/review" style="color: #9747FF;">Haz clic aquí</a>
+            </p>
+
+            <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
+                © 2024 Talos - Servicios de Creación de Logos. Todos los derechos reservados.<br>
+                Este es un email automático, por favor no respondas directamente.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

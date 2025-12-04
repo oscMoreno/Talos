@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Reseña - Talos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: white;
+            margin: 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #9747FF;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        .content {
+            margin: 30px 0;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0D0D12;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 25px;
+        }
+        .highlight {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #9747FF;
+            margin: 25px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #9747FF;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 25px 0;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #8B3DFF;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #9747FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Talos</div>
+            <div class="subtitle">Servicios de Creación de Logos</div>
+        </div>
+
+        <div class="content">
+            <div class="greeting">¡Hola {{clientName}}!</div>
+
+            <div class="message">
+                Esperamos que estés satisfecho con tu proyecto de <strong>{{projectType}}</strong> que completamos recientemente.
+                Tu opinión es muy importante para nosotros y nos ayuda a mejorar continuamente nuestros servicios.
+            </div>
+
+            <div class="highlight">
+                <strong>¿Nos ayudarías con una reseña rápida?</strong><br>
+                Solo toma 2 minutos y significa mucho para nosotros. Tu feedback nos ayuda a crecer y servir mejor a nuestros clientes.
+            </div>
+
+            <div style="text-align: center;">
+                <a href="{{reviewUrl}}" class="cta-button">
+                    Dejar mi Reseña ⭐
+                </a>
+            </div>
+
+            <div class="message">
+                <strong>¿Qué incluye tu reseña?</strong><br>
+                • Tu experiencia general con el proyecto<br>
+                • Calidad del trabajo entregado<br>
+                • Comunicación y soporte recibido<br>
+                • Recomendación a otros clientes
+            </div>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="message">
+                <em>Gracias por elegir Talos para tu proyecto. ¡Esperamos trabajar contigo nuevamente!</em>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://facebook.com/taloslogos">Facebook</a> |
+                <a href="https://youtube.com/taloslogos">YouTube</a> |
+                <a href="https://talos-logos.com">Sitio Web</a>
+            </div>
+
+            <p>
+                Este email fue enviado a {{clientEmail}} porque completaste un proyecto con nosotros.<br>
+                ¿No quieres recibir estos emails? <a href="#" style="color: #9747FF;">Cancelar suscripción</a>
+            </p>
+
+            <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
+                © 2024 Talos - Servicios de Creación de Logos. Todos los derechos reservados.<br>
+                Este es un email automático, por favor no respondas directamente.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
