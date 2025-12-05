@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Services from './components/Services';
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
       <Header />
+      <Hero />
       <Portfolio />
       <Testimonials />
       <Services />
