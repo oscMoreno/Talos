@@ -8,7 +8,9 @@ El sistema automatiza el proceso de obtención de reseñas reales mediante:
 - **Emails programados** 7 días después de completar un proyecto
 - **Enlaces seguros** con tokens únicos para cada cliente
 - **Formularios dedicados** para dejar reseñas
-- **Emails de agradecimiento** con incentivos
+- **Sistema de gestión** para programar y enviar emails
+
+**Nota:** Este sistema está diseñado para que manejes tus propios cuerpos de email y servicios de envío. No incluye integración con servicios específicos como EmailJS.
 
 ## 🏗️ **Arquitectura del Sistema**
 
@@ -18,8 +20,8 @@ src/
 ├── services/
 │   └── emailService.js          # Servicio principal de emails
 ├── templates/
-│   ├── reviewRequestEmail.html  # Plantilla email solicitud
-│   └── thankYouEmail.html       # Plantilla email agradecimiento
+│   ├── reviewRequestEmail.html  # Plantilla email solicitud (ejemplo)
+│   └── thankYouEmail.html       # Plantilla email agradecimiento (ejemplo)
 ├── components/
 │   └── ReviewForm.jsx           # Formulario para reseñas
 ├── utils/
@@ -38,15 +40,14 @@ src/
 REACT_APP_API_URL=http://localhost:3001/api
 REACT_APP_API_TOKEN=your_api_token_here
 
-# Email Service (SendGrid)
+# Email Service (elige tu proveedor preferido)
+# SendGrid
 REACT_APP_SENDGRID_API_KEY=your_sendgrid_api_key
 FROM_EMAIL=noreply@talos-logos.com
 FROM_NAME=Talos - Servicios de Creación de Logos
 
-# EmailJS (Alternativa gratuita)
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_REVIEW_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_USER_ID=your_user_id
+# O cualquier otro servicio de email que prefieras
+# (ej: AWS SES, Mailgun, Postmark, etc.)
 ```
 
 ### **2. Backend API (Node.js + Express)**
@@ -337,28 +338,30 @@ gtag('event', 'review_submitted', {
 });
 ```
 
-## 🔧 **Solución Alternativa Gratuita**
+## 🔧 **Servicios de Email Recomendados**
 
-Si no quieres configurar un servidor completo, puedes usar **EmailJS**:
+Para implementar el envío de emails, puedes elegir cualquier servicio que prefieras:
 
-### **Configuración EmailJS:**
+### **Opciones Populares:**
+- **SendGrid** - Profesional, confiable, buen precio
+- **AWS SES** - Muy económico para altos volúmenes
+- **Mailgun** - Buena API, fácil configuración
+- **Postmark** - Excelente deliverability
+- **Tu propio servidor SMTP** - Para máxima personalización
+
+### **Ejemplo genérico de envío:**
 ```javascript
-import emailjs from 'emailjs-com';
-
+// Ejemplo con cualquier servicio de email
 const sendReviewRequest = async (clientData) => {
-  const templateParams = {
-    to_email: clientData.email,
-    client_name: clientData.name,
-    project_type: clientData.project,
-    review_link: `${window.location.origin}/review?token=${generateToken()}`
+  const emailData = {
+    to: clientData.email,
+    subject: `¡Hola ${clientData.name}! ¿Cómo estuvo tu proyecto?`,
+    html: generateReviewEmailHTML(clientData),
+    from: process.env.FROM_EMAIL
   };
 
-  await emailjs.send(
-    process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-    templateParams,
-    process.env.REACT_APP_EMAILJS_USER_ID
-  );
+  // Envía usando tu servicio preferido
+  await emailService.send(emailData);
 };
 ```
 
